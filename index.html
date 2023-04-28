@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Js Logic Examples</title>
+    <style>
+      body{
+        background-color: pink;
+        color: teal;
+      }
+        div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        button{
+          width: 80px;
+          height: 5vh; background-color: green;
+          color: white;
+          border-color: green;
+        }
+        input{
+          outline: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- odd even  -->
+<div>
+    <h3>OddEven</h3>
+    Number 1 : <input type="text" id="num1"> <br>
+    Output : <span id="result"></span> <br> <button onclick="oddeven()">Oddmsg</button>
+</div>
+<hr>
+<!-- Checking two value -->
+<div>
+    <h3>Two_Number</h3>
+   Number 1 : <input type="number" id="number1"> <br>
+   Number 2 : <input type="number" id="number2"> <br>
+   Output : <span id="rtwonumber"></span> <br> <button onclick="twoNumber()">Two Check</button>
+</div> 
+<hr>
+<!-- Checking Three NUmber  -->
+<div>
+    <h3>Three_Number</h3>
+   Number 1 : <input type="text" id="number11"> <br>
+   Number 2 : <input type="text" id="number22"> <br>
+   Number 3 : <input type="text" id="number33"> <br>
+   Output : <span id="rthreenumber"></span> <br> <button onclick="threenumber()">Three Check</button>
+</div> <br>
+<hr>
+ <!-- Positive or Negative  -->
+  <div>
+    <h3>Positive or negative Number</h3>
+    Enter the Number : <input type="text" id="pnnumber"> <br>
+    Output : <span id="pnResult"></span> <br>
+    <button onclick="posneg()">PosNeg</button>
+  </div>
+  <hr>
+  <!-- Leap Year -->
+  <div>
+    <h3>Leap Year</h3>
+    Enter the Year : <input type="text" id="lpnumber"> <br>
+    Output : <span id="lpResult"></span> <br>
+    <button onclick="lpyear()">Check Leap Year</button>
+  </div>
+  <hr>
+<!-- Vowel -->
+<div>
+    <h3>Vowel Letter </h3> 
+    Enter the Letter : <input type="text" id="vletter"> <br>
+    Output : <span id="vresult"></span><br>
+    <button onclick="vowel()">Check it</button>
+</div>
+<hr>
+<!-- month using switch -->
+<div>
+  <h3>Month checking using Number</h3> <br>
+  Enter the number ( 0 - 11 ): <input type="number" id="mnumber"> <br>
+  output : <span id="mresult"></span> <br>
+  <button onclick="month()">Check it</button> <br>
+</div>
+<hr>
+<!-- grade -->
+<div>
+  <h3>Grade System</h3>
+  Enter the Mark : <input type="number" id="gnumber">
+  Output : <span id="gresult"></span> <br>
+  <button onclick="grade()">Check it </button>
+</div>
+<hr>
+<!--  Discount   -->
+<div>
+  <h3>**Discount of the Product </h3> <br>
+  Enter the Amount : <input type="number" id="Anumber"> <br>
+  Output : <span id="tdis"></span> <span  id="RAmount"></span>
+  <button onclick="discount()">Check Discount</button>
+</div>
+<hr>
+<!--Swapping  -->
+<div>
+  <h3>Swapping Two Numbers</h3> <br>
+  Number 1 : <input type="number" id="swapnum1"> <br>
+  Number 2 : <input type="number" id="swapnum2"> <br>
+  Swapped Number 1 : <input type="number" id="snum1"><br>
+  Swapped Number 2 : <input type="number" id="snum2"> <br> 
+  <button onclick="swap()">Swap</button>
+</div>
+<hr>
+<!-- salary and year of Experience -->
+<div>
+  <h3>**Salary and Year of experience </h3> <br>
+  Salary : <input type="number" id="salary"> <br>
+  Year of Experiences : <input type="number" id="Exp"> <br>
+  <span id="text"></span>
+  <span id="sresult"></span> <br>
+  <button onclick="salaryAmount()">Bonus</button>
+</div>
+<hr>
+<!-- tables -->
+<div>
+  <h3>Tables </h3> <br>
+ Table Number :  <input type="number" id="table"> <br>
+ Range From : <input type="number" id="tableStart"> <br>
+ Range To : <input type="number" id="tableEnd"> <br>
+ Output : <textarea  id="tablesResult" cols="40" rows="7"></textarea> <br>
+ <button onclick="table()">Output</button>
+</div>
+
+<script>
+//table 
+function table(){
+  /// let tableNum =5 , tableStart=1,tableEnd=10;
+  let tableNum = document.getElementById('table').value;
+  let Start = document.getElementById('tableStart').value;
+  let End = document.getElementById('tableEnd').value;
+  let res="";
+  for(let i=Start;i<=End;i++){
+   document.getElementById('tablesResult').value=tableNum+" X "+i+" = "+tableNum*i ;
+   res = res+ tableNum+" X "+i+" = "+tableNum*i+"\n" ;
+  }
+  document.getElementById('tablesResult').value =res;
+  
+  } //table()
+    // Odd or Even 
+function oddeven(){
+        let number = document.getElementById('num1').value;
+        if(number%2==0 && number!=0){
+            document.getElementById('result').innerHTML="Even Number !"
+        }
+        else if(number%2==1){
+            document.getElementById('result').innerHTML="Odd number !.."; 
+        }
+        else if (number == null){
+          document.getElementById('result').innerHTML="Empty !..";
+        }
+        else if(number==0){
+            document.getElementById('result').innerHTML="Zero !..";
+        }
+        else{
+          document.getElementById('result').innerHTML="Enter a number !..";
+        }
+    }
+    // checking two value
+function  twoNumber(){
+     let number1 = document.getElementById('number1').value;
+     let number2=document.getElementById('number2').value;
+
+     if(number1>number2){
+        document.getElementById('rtwonumber').innerHTML="Number 1 is Greater Number !..."
+        }
+        
+    else if(number1<number2){
+      document.getElementById('rtwonumber').innerHTML="Number 2 is Greater Number !.."
+        }
+        else if(number1==number2){
+          document.getElementById('rtwonumber').innerHTML="Numbers are Equal"
+        }
+   else{
+          document.getElementById('rtwonumber').innerHTML="Enter a Number !.."
+        }
+    }
+    // threeNumber Check 
+function threenumber(){
+      let number1 = document.getElementById('number11').value;
+      let number2=document.getElementById('number22').value;
+      let number3=document.getElementById('number33').value;
+
+      if(number1>number2 && number1>number3){
+        document.getElementById('rthreenumber').innerHTML="Number 1 is Greater than Other Two numbers"
+      }
+      else if(number2>number1 && number2>number3){
+        document.getElementById('rthreenumber').innerHTML="Number 2 is Greater than Other Two numbers"
+      }
+      else if(number1==number2 && number2==number3 && number3==number1){
+        document.getElementById('rthreenumber').innerHTML="Numbers are Equal"
+      }
+
+      else{
+        document.getElementById('rthreenumber').innerHTML="Number 3 is Greater than Other Two numbers"
+      }
+
+    }
+  // positive and negative 
+function posneg(){
+    let number=document.getElementById('pnnumber').value;
+    if(number<0 && number !=0){
+    document.getElementById('pnResult').innerHTML="Negative Number !.."
+    }
+    else if (number==0){
+      document.getElementById('pnResult').innerHTML=" Zero !.."
+    }
+    else {
+      document.getElementById('pnResult').innerHTML="Positive Number !.."
+    }
+  }
+// leap year 
+function lpyear(){
+    let year = document.getElementById('lpnumber').value;
+    if(year%400==0 && year%100==0 || year%4==0){
+        document.getElementById('lpResult').innerHTML="Leap Year"
+    }
+    else{
+        document.getElementById('lpResult').innerHTML="Not a Leap Year" 
+    }
+}
+// Vowel Words
+function vowel(){
+  let letter = document.getElementById('vletter').value;
+
+  // switch(letter){
+  //   case 'a' : document.getElementById('vresult').innerHTML="Vowel Letter"
+  //   break;
+
+  //   case 'e': document.getElementById('vresult').innerHTML="vowel letter";
+  //   break;
+
+  //   case 'i'  : document.getElementById('vresult').innerHTML="vowel letter";
+  //   break;
+
+  //   case 'o': document.getElementById('vresult').innerHTML="vowel letter";
+  //   break;
+
+  //   case 'u'  : document.getElementById('vresult').innerHTML="vowel letter";
+  //   break;
+  //   default: document.getElementById('vresult').innerHTML="not a vowel letter";
+  // }
+  if (letter=='a' || letter=='A' || letter=='e' ||letter=='E' ||letter=='i' ||letter=='I' ||letter=='o' ||letter=='O' ||letter=='u' ||letter=='U'){
+    document.getElementById('vresult').innerHTML="Vowel Letter"
+  }
+  else{
+    document.getElementById('vresult').innerHTML="not a vowel letter";
+  }
+}
+// month using switch
+function month(){
+ let nmonth = document.getElementById('mnumber').value;
+ switch(nmonth){
+  case '0' : document.getElementById('mresult').innerHTML="Jan"; break;
+  case '1' : document.getElementById('mresult').innerText="Feb"; break;
+  case '2' : document.getElementById('mresult').innerHTML="march"; break;
+  case '3' : document.getElementById('mresult').innerHTML="April"; break;
+  case '4' : document.getElementById('mresult').innerHTML="May"; break;
+  case '5' : document.getElementById('mresult').innerHTML="june"; break;
+  case '6' : document.getElementById('mresult').innerHTML="july"; break;
+  case '7' : document.getElementById('mresult').innerHTML="Aug"; break;
+  case '8' : document.getElementById('mresult').innerHTML="Sep"; break;
+  case '9' : document.getElementById('mresult').innerHTML="Oct"; break;
+  case '10' :document.getElementById('mresult').innerHTML="Nov"; break;
+  case '11' :document.getElementById('mresult').innerHTML="Dec"; break;
+default :document.getElementById('mresult').innerHTML="Invalid Number"; 
+ }
+}
+// grade System
+function grade(){
+ let Mark = document.getElementById('gnumber').value;
+ if(Mark>=90 && Mark<=100){
+  document.getElementById('gresult').innerHTML="O (Pass)"
+ }
+ else if(Mark>=80 && Mark<=89){
+  document.getElementById('gresult').innerHTML="A (Pass)"
+ }
+ else if(Mark>=70 && Mark<=79){
+  document.getElementById('gresult').innerHTML="B+ (Pass)"
+ }
+ else if(Mark>=60 && Mark<=69){
+  document.getElementById('gresult').innerHTML="B (Pass)"
+ }
+ else if(Mark>=50 && Mark<=59){
+  document.getElementById('gresult').innerHTML="C (Pass)"
+ }
+ else if(Mark<50){
+  document.getElementById('gresult').innerHTML="U (Fail)"
+ }
+ else {
+  document.getElementById('gresult').innerHTML="Invalid Mark Please Enter the Proper Mark  Max up to 100 mark don't give more than 100"
+ }
+}
+// discount 
+function discount(){
+let Amount = document.getElementById('Anumber').value;
+if(Amount >= 1000){ 
+  dis = Amount * (10/100);
+  document.getElementById('tdis').innerHTML="Got 10% Discount You can Pay"
+  document.getElementById('RAmount').innerHTML =Amount-dis;
+}
+else if (Amount==0){
+  document.getElementById('tdis').innerHTML=" "
+  document.getElementById('RAmount').innerHTML ="Your are Enter 0 rs Check it";
+}
+else{ 
+  document.getElementById('tdis').innerHTML="No Discount U can Pay , 10% Discount will be above 1000 Rs"
+    document.getElementById('RAmount').innerHTML=Amount;
+}
+}
+// salary and experience
+function salaryAmount(){
+  let salaryAmount = document.getElementById('salary').value;
+  let expYear = document.getElementById('Exp').value;
+  if(salaryAmount<=20000 && expYear>=3){
+    bonus = salaryAmount*(5/100);
+    document.getElementById('text').innerHTML="Got 5% Bonus for Your Amount of  "+salaryAmount;
+   document.getElementById('sresult').innerHTML="Bonus : "+bonus+" Rs";
+  }
+  else if(salaryAmount>=20000 && expYear>=3){
+    document.getElementById('text').innerHTML="Salary is too high";
+   document.getElementById('sresult').innerHTML="Not Eligible for Bonus";
+  }
+  else if(salaryAmount<=20000 && expYear<=3){
+    document.getElementById('text').innerHTML="Experiences is too low";
+   document.getElementById('sresult').innerHTML="Not Eligible for Bonus";
+  }
+  else{
+    document.getElementById('text').innerHTML="Salary is too high and Experiences is too low";
+    document.getElementById('sresult').innerHTML="Not Eligible for Bonus"
+  }
+}
+//Swapping 
+function swap(){
+  let value1 = document.getElementById('swapnum1').value;
+  let value2 = document.getElementById('swapnum2').value;
+document.getElementById('snum1').value=value2;
+document.getElementById('snum2').value=value1;
+}
+// 
+</script>
+</body>
+</html>
